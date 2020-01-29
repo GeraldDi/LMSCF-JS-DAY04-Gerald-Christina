@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>intermediate_hotel</title>
+	<link rel="stylesheet" type="text/css" href="intermediate_hotel.css">
+</head>
+<body>
+	<div>Hiltion Hotel:</div>
+	<div id="resulth"></div>
+
+	<div>Mariott Hotel:</div>
+	<div id="resultm"></div>
+
+	<div>HolidayInn Hotel:</div>
+	<div id="resulti"></div>
+
+	<script>
+
+	
+		var checkh = prompt("Pleade insert the numbers of nights you want to stay in the Hilton Hotel", "3");
+		var checkm = prompt("Pleade insert the numbers of nights you want to stay in the Mariott Hotel", "3");
+		var checki = prompt("Pleade insert the numbers of nights you want to stay in the HolidayInn Hotel", "3");
+		
+		function HotelConstructor(name, avnights) {
+		       this.name = name;
+		       this.avnights = 10;
+		     
+		       this.checkAvailability = function() {
+		            return this.avnights - Math.ceil(Math.random()*9);
+            
+		       };
+
+		}
+		var hiltonHotel = new HotelConstructor('Hilton');
+		var mariottHotel = new HotelConstructor('Marriott');
+		var holidayInnHotel = new HotelConstructor('Holiday Inn');
+
+
+      if (hiltonHotel.checkAvailability()>=checkh){
+      	var texth = document.getElementById("resulth");
+   	    texth.textContent = "I'll reserve";
+      }else{
+      	var texth = document.getElementById("resulth");
+   	    texth.textContent = "Sorry, no free room for "+ checkh+ " nights";
+      }
+
+
+	   if (mariottHotel.checkAvailability()>=checkm){
+      	var textm = document.getElementById("resultm");
+   	    textm.textContent = "I'll reserve";
+      }else{
+      	var textm = document.getElementById("resultm");
+   	    textm.textContent = "Sorry, no free room for "+ checkm+ " nights";
+      }
+
+      if (holidayInnHotel.checkAvailability()>=checki){
+      	var texti = document.getElementById("resulti");
+   	    texti.textContent = "I'll reserve";
+      }else{
+      	var texti = document.getElementById("resulti");
+   	    texti.textContent = "Sorry, no free room for "+ checki+ " nights";
+      }
+
+		console.log(hiltonHotel.checkAvailability() + " available rooms, demand: "+checkh);
+		console.log(mariottHotel.checkAvailability()+ " available rooms, demand: "+checkm);
+		console.log(holidayInnHotel.checkAvailability()+ " available rooms, demand: "+checki);
+
+	</script>
+</body>
+</html>
