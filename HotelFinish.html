@@ -5,18 +5,26 @@
 	<link rel="stylesheet" type="text/css" href="intermediate_hotel.css">
 </head>
 <body>
-	<div>Hilton Hotel:
+	<h1 align="center">Welcome to our hotels</h1>
+	<div class="flexit">
+
+	<div class="hotelA">Hilton Hotel:
 	<div id="resulth"></div>
-	<button id="buttonA" type="button">I'll reserve</button>
-   </div>
+	<button id="buttonA" type="button" onclick="Thanks()">I'll reserve</button>
+    </div>
 
 
-	<div>Mariott Hotel:</div>
+	<div class="hotelB">Mariott Hotel:
 	<div id="resultm"></div>
+	<button id="buttonB" type="button" onclick="Thanks()">I'll reserve</button>
+    </div>
 
-	<div>HolidayInn Hotel:</div>
+	<div class="hotelC">Holiday Inn Hotel:
 	<div id="resulti"></div>
+	<button id="buttonC" type="button" onclick="Thanks()">I'll reserve</button>
+    </div>
 
+</div>
 	<script>
 
 	
@@ -58,20 +66,25 @@
 
 	   if (mariottHotel.checkAvailability() >= checkm){
       	var textm = document.getElementById("resultm");
-   	    textm.textContent = "I'll reserve";
+   	    document.getElementById("buttonB").style.display = "block";
       }else{
       	var textm = document.getElementById("resultm");
+      	document.getElementById("buttonB").style.display = "none";
    	    textm.textContent = "Sorry, no free room for "+ checkm+ " nights";
       }
 
       if (holidayInnHotel.checkAvailability() >= checki){
       	var texti = document.getElementById("resulti");
-   	    texti.textContent = "I'll reserve";
+   	    document.getElementById("buttonC").style.display = "block";
       }else{
       	var texti = document.getElementById("resulti");
+      	document.getElementById("buttonC").style.display = "none";
    	    texti.textContent = "Sorry, no free room for "+ checki+ " nights";
       }
 
+function Thanks() {
+	alert("Thanks for your reservation.")
+}
 		console.log(hiltonHotel.testa + " available rooms, demand: "+checkh);
 		console.log(mariottHotel.testa+ " available rooms, demand: "+checkm);
 		console.log(holidayInnHotel.testa+ " available rooms, demand: "+checki);

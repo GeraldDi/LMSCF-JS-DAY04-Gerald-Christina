@@ -1,3 +1,43 @@
-div{
-	background-color: #003580;
+h1{
+	background-color:#E9F0FA;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+body{
+background-color:#FFFFFF;
+}
+.flexit{
+	background-color:#E9F0FA;
+	font-size: 3em;
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	padding-bottom: 5%;
+	padding-top: 5%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.hotelA,
+.hotelB,
+.hotelC{
+	padding: 1em;
+	align-items: center;
+	background-color: #ccf5ff;
+    width: 20%;
+}
+
+button{
+	border-radius: 12px;
+ background-color: #003580;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 22px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
