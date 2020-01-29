@@ -17,17 +17,23 @@
 	<script>
 
 	
-		var checkh = prompt("Pleade insert the numbers of nights you want to stay in the Hilton Hotel", "3");
-		var checkm = prompt("Pleade insert the numbers of nights you want to stay in the Mariott Hotel", "3");
-		var checki = prompt("Pleade insert the numbers of nights you want to stay in the HolidayInn Hotel", "3");
+		var xcheckh = prompt("Pleade insert the numbers of nights you want to stay in the Hilton Hotel", "3");
+		var xcheckm = prompt("Pleade insert the numbers of nights you want to stay in the Mariott Hotel", "3");
+		var xchecki = prompt("Pleade insert the numbers of nights you want to stay in the HolidayInn Hotel", "3");
+
+		var checkh = parseInt(xcheckh);
+		var checkm = parseInt(xcheckm);
+		var checki = parseInt(xchecki);
+
+
 		
 		function HotelConstructor(name, avnights) {
 		       this.name = name;
 		       this.avnights = 10;
 		     
 		       this.checkAvailability = function() {
-		            return this.avnights - Math.ceil(Math.random()*9);
-            
+		       	this.testa=this.avnights - Math.ceil(Math.random()*9);
+		            return this.testa;           
 		       };
 
 		}
@@ -36,7 +42,7 @@
 		var holidayInnHotel = new HotelConstructor('Holiday Inn');
 
 
-      if (hiltonHotel.checkAvailability()>=checkh){
+      if (hiltonHotel.checkAvailability() >= checkh){
       	var texth = document.getElementById("resulth");
    	    texth.textContent = "I'll reserve";
       }else{
@@ -45,7 +51,7 @@
       }
 
 
-	   if (mariottHotel.checkAvailability()>=checkm){
+	   if (mariottHotel.checkAvailability() >= checkm){
       	var textm = document.getElementById("resultm");
    	    textm.textContent = "I'll reserve";
       }else{
@@ -53,7 +59,7 @@
    	    textm.textContent = "Sorry, no free room for "+ checkm+ " nights";
       }
 
-      if (holidayInnHotel.checkAvailability()>=checki){
+      if (holidayInnHotel.checkAvailability() >= checki){
       	var texti = document.getElementById("resulti");
    	    texti.textContent = "I'll reserve";
       }else{
@@ -61,9 +67,9 @@
    	    texti.textContent = "Sorry, no free room for "+ checki+ " nights";
       }
 
-		console.log(hiltonHotel.checkAvailability() + " available rooms, demand: "+checkh);
-		console.log(mariottHotel.checkAvailability()+ " available rooms, demand: "+checkm);
-		console.log(holidayInnHotel.checkAvailability()+ " available rooms, demand: "+checki);
+		console.log(hiltonHotel.testa + " available rooms, demand: "+checkh);
+		console.log(mariottHotel.testa+ " available rooms, demand: "+checkm);
+		console.log(holidayInnHotel.testa+ " available rooms, demand: "+checki);
 
 	</script>
 </body>
