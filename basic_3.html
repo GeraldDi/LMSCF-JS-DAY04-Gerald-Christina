@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Basic 3</title>
+</head>
+<body>
+	<p id="result"></p>
+
+	<script>
+
+		var me = {
+			fname:"Gerald",
+			sname:"Dittrich",
+			age:26,
+			status:"future programmer.",
+
+			 whatever:function(){
+				return ("Hi I am "+ this.fname +" "+this.sname+ " I am "+this.age+ " years old and I am a " +this.status);
+			}
+		}
+		var text = document.getElementById("result");
+   	    text.textContent = me.whatever();
+		
+	</script>
+</body>
+</html>
