@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+   <title>Basic 1</title>
+
+</head>
+
+<body>
+
+ <h2 id="result"> </h2>
+
+   <script type="text/javascript">
+
+     string= prompt("Enter your text here","I am a hero from World of Warcraft");
+     stringCut= prompt("How many characters do you wanna cut?","12");
+
+
+    var Truncate = {
+      string: string,
+      length: parseInt(stringCut),
+
+       trimmedString: function(){
+        return (this.string.substring(0,this.length));
+       } 
+    }
+
+      var showResult = document.getElementById("result");
+      showResult.textContent = Truncate.trimmedString();
+
+   </script>
+</body>
+
+</html>

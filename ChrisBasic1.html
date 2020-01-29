@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+   <title>Basic 1</title>
+
+</head>
+
+<body>
+
+ <h2 id="age"> </h2>
+
+   <script type="text/javascript">
+     birthYear=prompt("Which year where you born?");
+     
+     var Age = {
+     currentYear : 2020,
+     
+     bY : parseInt(birthYear),
+     checkAge: function(){
+     return("Your age is "+(this.currentYear - this.bY));
+      }
+  }
+ 
+ var print_age = document.getElementById("age");
+ print_age.textContent = Age.checkAge();
+   </script>
+</body>
+
+</html>
